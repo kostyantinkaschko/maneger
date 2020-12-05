@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/icon1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Футбольний Менеджер офіційний сайт - новин футболу</title>
+</head>
+<body>
+    <div class="block-wrapper">
+        <div class="header">
+            <div class="logo">
+                <p>Футбольний<b>Менеджер</b><i>Офіційний сайт</i></p>
+                <span class="nogoal">
+                    <img src="img/ball.png" alt="Логотип футбольного менеджера">
+                </span>
+            </div>
+            <div class="number">
+                <p>
+                    <a href="tel:+38097555501">+38 (097) 555-55-0<span id="counter">1</span></a><i>Працюємо 24/7</i>
+                </p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <span class="slider">
+            <img src="img/picture.jpg" alt="Останні новини футболу прямо зі стадіону">
+            <b id="win">Перемога</b>
+            <b id="lose">Поразка</b>
+            <img class="mem" id="obama" src="img/win.png" alt="Я не граю у футбол, але це було КРУТО!">
+            <img class="mem" id="jecky" src="img/lose.png" alt="НУ ЯК ТО ТАК!? ВОРОТА ПОРОЖНІ">    
+        </span>
+        <div class="content">
+            <div class="main">
+                <h1>Про футбол</h1>
+                <p>
+                    Командний вид спорту, який грається між двома командами по одинадцяти гравців зі сферичним м'ячем.
+                    Близько 250 мільйонів чоловіків і жінок із більш ніж 200 країн грають у футбол, що робить його
+                    найпопулярнішим в світі видом спорту.
+                </p>
+                <p>
+                    У футбол грають на прямокутному полі з воротами на кожному кінці. Мета гри полягає в тому, щоб
+                    забити м'яч в ворота протилежної команди. Гравцям не дозволяється торкатися м'яча своїми руками,
+                    поки він знаходиться в грі, якщо вони не є воротарі (і тільки тоді, коли в їхньому штрафному
+                    майданчику).
+                </p>
+                <p>
+                    Або при вкиданні м'яча. Інші гравці в основному використовують свої ноги, щоб нанести удар або
+                    передати м'яч, але можуть також використовувати голову і тулуб.
+                </p>
+            </div>
+            <div class="menu">
+                <p>
+                    Футбольні партнери
+                </p>
+                <ul>
+                    <li>
+                        <a href="#">ОСТАННІ НОВИНИ</a>
+                    </li>
+                    <li>
+                        <a href="#">ПАРІ МАТЧ</a>
+                    </li>
+                    <li>
+                        <a href="#">ПРИВАТНИЙ МЕНЕДЖЕР ВАСЯ</a>
+                    </li>
+                    <li>
+                        <a href="#">ФАНАТИ СЕКТОРУ №48</a>
+                    </li>
+                    <li>
+                        <a href="#">ДОСТАВКА ЇЖІ НА СТАДІОН</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <p class="footer">&copy; Футбольний менеджер 2018.</p>
+    </div>
+    </div>
+    <script>
+    let ball = document.querySelector(".logo span"),
+        counter = document.getElementById("counter"),
+        win = document.getElementById("win"),
+        lose = document.getElementById("lose"),
+        jacky = document.getElementById("jecky"),
+        obama = document.getElementById("obama"),
+        result
+    ball.onmouseenter = function(){
+        let rand = Math.floor(Math.random() * 2)
+        if(rand == 1){
+            obama.classList.add("show-mem")
+            setTimeout(() =>  obama.classList.remove("show-mem"), 1000)
+             ball.classList.remove("nogoal")
+             result = Number(counter.innerText) + 1
+             if(result == 10){
+                win.style.display = "block"
+                setTimeout(function(){
+                    counter.innerHTML = 1
+                    win.style.display = "none"
+                }, 3000)
+            } else {
+                counter.innerHTML = result
+            }
+        } else {
+                jecky.classList.add("show-mem")
+                setTimeout(() =>  jecky.classList.remove("show-mem"), 500)
+                ball.classList.add("nogoal")
+                result = Number(counter.innerText) - 1
+                if(result == -1){
+                    lose.style.display = "block"
+                    setTimeout(function(){
+                        lose.style.display = "none"
+                        counter.innerHTML = 1
+                    }, 3000)
+            } else {
+                counter.innerHTML = result
+            }
+        }
+    }
+    </script>
+</body>
+</html>

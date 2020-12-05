@@ -1,0 +1,173 @@
+body{
+    background-color: #8dc63f;
+    margin: 0;
+    font: 14px Arial, sans-serif;
+}
+.clear{
+    clear: both;
+}
+.block-wrapper{
+    background-color: #fff;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.header{
+    padding: 25px 0;
+}
+.logo p,
+.number p,
+.number a{
+    margin: 0;
+    font-size: 22px;
+    color: #39930d;
+    font-family: "Arial";
+}
+.logo,
+.logo p,
+.logo img{
+    float: left;
+}
+.logo b{
+    display: block;
+    font-size: 44px;
+}
+.number{
+    float: right;
+}
+.number a{
+    text-decoration: none;
+}
+.number i{
+    display: block;
+    text-align: right;
+}
+.logo i,
+.number i{
+    font-size: 14px;
+    color: #5a5a5a;
+    font-family:"Arial";
+    font-style: italic;
+}
+.logo span{
+    position: relative;
+    margin-left: 34px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+.logo img{
+    transition: all .5s ease;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.logo span:hover img{
+    left: 300px;
+    top: 200px;
+    transform: rotate(360deg);
+}
+.nogoal:hover img{
+    padding-left: 200px;
+}
+.slider{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+.slider:before{
+    content: "";
+    position: absolute;
+    width: 125px;
+    height: 153px;
+    right: 167px;
+    top: 31px;
+    background-image: url(../img/stanga.png);
+    z-index: 2;
+}
+#win,
+#lose{
+    position: absolute;
+    color: white;
+    display: none;
+    font-size: 60px;
+    left: 50%;
+    bottom: 78px;
+    transform: translateX(-50%);
+}
+#win{
+    color: limegreen;
+}
+#lose{
+    color: tomato;
+}
+.mem{
+    position: absolute;
+    bottom: 0;
+    transition: all .5s ease;
+    transform: translateY(200px);
+}
+.show-mem{
+    transform: translateY(0);
+}
+#jecky{
+    width: 241px;
+    height: 200px;
+    left: 0;
+}
+#obama{
+    width: 229px;
+    height: 150px;
+    right: 0;
+}
+.main{
+    float: left;
+    max-width: 600px;
+    padding-bottom: 40px;
+}
+.main h1{
+    font-size: 24px;
+    color: #39930d;
+}
+.main p{
+    line-height: 1.5em;
+}
+.menu{
+    float: right;
+    width: 300px;
+}
+.menu p{
+    background-color: #39930d;
+    padding: 14px;
+    color: white;
+}
+.menu ul{
+    padding: 0 20px;
+    list-style-type: none;
+}
+.menu li{
+    margin-bottom: 5px;
+}
+.menu a{
+    color: #39930d;
+    text-transform: uppercase;
+    line-height: 24px;
+    transition: all .5s ease;
+}
+.menu a:hover{
+    text-decoration: none;
+    padding: 0 20px;
+    display: block;
+    color: black;
+}
+.footer{
+    color: #ffffff;
+    background-color: #39930d;
+    padding: 17px 15px 14px;
+    margin: 0 -15px;
+}
+
+
