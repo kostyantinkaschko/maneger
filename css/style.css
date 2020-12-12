@@ -81,9 +81,9 @@ body{
 .slider:before{
     content: "";
     position: absolute;
-    width: 125px;
+    width: 117px;
     height: 153px;
-    right: 167px;
+    right: 176px;
     top: 31px;
     background-image: url(../img/stanga.png);
     z-index: 2;
