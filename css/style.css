@@ -1,84 +1,100 @@
-body{
+body {
     background-color: #8dc63f;
     margin: 0;
     font: 14px Arial, sans-serif;
 }
-.clear{
+
+.clear {
     clear: both;
 }
-.block-wrapper{
+
+.block-wrapper {
     background-color: #fff;
     max-width: 960px;
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: border-box;
 }
-.header{
+
+.header {
     padding: 25px 0;
 }
+
 .logo p,
 .number p,
-.number a{
+.number a {
     margin: 0;
     font-size: 22px;
     color: #39930d;
     font-family: "Arial";
 }
+
 .logo,
 .logo p,
-.logo img{
+.logo img {
     float: left;
 }
-.logo b{
+
+.logo b {
     display: block;
     font-size: 44px;
 }
-.number{
+
+.number {
     float: right;
 }
-.number a{
+
+.number a {
     text-decoration: none;
 }
-.number i{
+
+.number i {
     display: block;
     text-align: right;
 }
+
 .logo i,
-.number i{
+.number i {
     font-size: 14px;
     color: #5a5a5a;
-    font-family:"Arial";
+    font-family: "Arial";
     font-style: italic;
 }
-.logo span{
+
+.logo span {
     position: relative;
     margin-left: 34px;
     width: 100px;
     height: 100px;
     display: inline-block;
 }
-.logo img{
+
+.logo img {
     transition: all .5s ease;
     z-index: 1;
     position: absolute;
     left: 0;
     top: 0;
 }
-.logo span:hover img{
+
+.logo span:hover img {
     left: 300px;
     top: 200px;
     transform: rotate(360deg);
 }
-.nogoal:hover img{
+
+.nogoal:hover img {
     padding-left: 200px;
 }
-.slider{
+
+.slider {
     width: 100%;
     position: relative;
     overflow: hidden;
     display: block;
 }
-.slider:before{
+
+.slider:before {
     content: "";
     position: absolute;
     width: 117px;
@@ -88,8 +104,18 @@ body{
     background-image: url(../img/stanga.png);
     z-index: 2;
 }
+
+.slider {
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 660px) {
+    .slider {
+        overflow-x: scroll;
+    }
+}
 #win,
-#lose{
+#lose {
     position: absolute;
     color: white;
     display: none;
@@ -98,76 +124,90 @@ body{
     bottom: 78px;
     transform: translateX(-50%);
 }
-#win{
+
+#win {
     color: limegreen;
 }
-#lose{
+
+#lose {
     color: tomato;
 }
-.mem{
+
+.mem {
     position: absolute;
     bottom: 0;
     transition: all .5s ease;
     transform: translateY(200px);
 }
-.show-mem{
+
+.show-mem {
     transform: translateY(0);
 }
-#jecky{
+
+#jecky {
     width: 241px;
     height: 200px;
     left: 0;
 }
-#obama{
+
+#obama {
     width: 229px;
     height: 150px;
     right: 0;
 }
-.main{
+
+.main {
     float: left;
     max-width: 600px;
     padding-bottom: 40px;
 }
-.main h1{
+
+.main h1 {
     font-size: 24px;
     color: #39930d;
 }
-.main p{
+
+.main p {
     line-height: 1.5em;
 }
-.menu{
+
+.menu {
     float: right;
     width: 300px;
 }
-.menu p{
+
+.menu p {
     background-color: #39930d;
     padding: 14px;
     color: white;
 }
-.menu ul{
+
+.menu ul {
     padding: 0 20px;
     list-style-type: none;
 }
-.menu li{
+
+.menu li {
     margin-bottom: 5px;
 }
-.menu a{
+
+.menu a {
     color: #39930d;
     text-transform: uppercase;
     line-height: 24px;
     transition: all .5s ease;
 }
-.menu a:hover{
+
+.menu a:hover {
     text-decoration: none;
     padding: 0 20px;
     display: block;
     color: black;
 }
-.footer{
+
+.footer {
     color: #ffffff;
     background-color: #39930d;
     padding: 17px 15px 14px;
     margin: 0 -15px;
 }
-
-

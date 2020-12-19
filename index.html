@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="wiewport" content="width=device-width, user-scalable=yes inital-scale=1.0, maximum-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Футбольний Менеджер офіційний сайт - новин футболу</title>
 </head>
+
 <body>
     <div class="block-wrapper">
         <div class="header">
@@ -28,7 +30,7 @@
             <b id="win">Перемога</b>
             <b id="lose">Поразка</b>
             <img class="mem" id="obama" src="img/win.png" alt="Я не граю у футбол, але це було КРУТО!">
-            <img class="mem" id="jecky" src="img/lose.png" alt="НУ ЯК ТО ТАК!? ВОРОТА ПОРОЖНІ">    
+            <img class="mem" id="jecky" src="img/lose.png" alt="НУ ЯК ТО ТАК!? ВОРОТА ПОРОЖНІ">
         </span>
         <div class="content">
             <div class="main">
@@ -77,45 +79,84 @@
     </div>
     </div>
     <script>
-    let ball = document.querySelector(".logo span"),
-        counter = document.getElementById("counter"),
-        win = document.getElementById("win"),
-        lose = document.getElementById("lose"),
-        jacky = document.getElementById("jecky"),
-        obama = document.getElementById("obama"),
-        result
-    ball.onmouseenter = function(){
-        let rand = Math.floor(Math.random() * 2)
-        if(rand == 1){
-            obama.classList.add("show-mem")
-            setTimeout(() =>  obama.classList.remove("show-mem"), 1000)
-             ball.classList.remove("nogoal")
-             result = Number(counter.innerText) + 1
-             if(result == 10){
-                win.style.display = "block"
-                setTimeout(function(){
-                    counter.innerHTML = 1
-                    win.style.display = "none"
-                }, 3000)
+        let ball = document.querySelector(".logo span"),
+            counter = document.getElementById("counter"),
+            win = document.getElementById("win"),
+            lose = document.getElementById("lose"),
+            jacky = document.getElementById("jecky"),
+            obama = document.getElementById("obama"),
+            result
+        ball.onmouseenter = function () {
+            let rand = Math.floor(Math.random() * 2)
+            if (rand == 1) {
+                obama.classList.add("show-mem")
+                setTimeout(() => obama.classList.remove("show-mem"), 1000)
+                ball.classList.remove("nogoal")
+                result = Number(counter.innerText) + 1
+                if (result == 10) {
+                    win.style.display = "block"
+                    setTimeout(function () {
+                        counter.innerHTML = 1
+                        win.style.display = "none"
+                    }, 3000)
+                } else {
+                    counter.innerHTML = result
+                }
             } else {
-                counter.innerHTML = result
-            }
-        } else {
                 jecky.classList.add("show-mem")
-                setTimeout(() =>  jecky.classList.remove("show-mem"), 500)
+                setTimeout(() => jecky.classList.remove("show-mem"), 500)
                 ball.classList.add("nogoal")
                 result = Number(counter.innerText) - 1
-                if(result == -1){
+                if (result == -1) {
                     lose.style.display = "block"
-                    setTimeout(function(){
+                    setTimeout(function () {
                         lose.style.display = "none"
                         counter.innerHTML = 1
                     }, 3000)
-            } else {
-                counter.innerHTML = result
+                } else {
+                    counter.innerHTML = result
+                }
             }
         }
-    }
+    </script>
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() ==
+                            "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date()
+                                .valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        } else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
     </script>
 </body>
+
 </html>
