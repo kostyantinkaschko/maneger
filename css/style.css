@@ -126,11 +126,11 @@ body {
 }
 
 #win {
-    color: limegreen;
+    color: #2a7d26;
 }
 
 #lose {
-    color: tomato;
+    color: #b10303;
 }
 
 .mem {
@@ -170,6 +170,11 @@ body {
 .main p {
     line-height: 1.5em;
 }
+
+.main p:first-child{
+    width: 272px;
+}
+
 
 .menu {
     float: right;
